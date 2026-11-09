@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <title>Portfolio - Tema 14</title>
+    <link rel="stylesheet" href="stil.css" />
+    <script src="funktioner.js" defer></script>
+  </head>
+  <body>
+    <!-- BESKED OM SKOLEOPGAVE -->
+    <div class="besked" id="skolebesked" role="dialog" aria-modal="true" aria-labelledby="beskedTitel">
+      <div class="besked-boks">
+        <h2 id="beskedTitel">Dette er et studieprojekt</h2>
+        <p>Dette website er produceret som en caseopgave på MMD-uddannelsen ved Erhvervsakademi Københavns (EK)</p>
+        <button id="lukBesked" type="button">Forstået</button>
+      </div>
+    </div>
+
+    <header>
+      <div class="indhold"><strong>Tema 14 - IKKEA</strong></div>
+    </header>
+
+    <main>
+      <section class="forside indhold">
+        <div>
+          <h1>IKKEA Black Friday</h1>
+          <p class="slogan">Små priser. Stor personlighed.</p>
+        </div>
+
+        <div class="forside-billede">
+          <img src="billeder/Sofabillede.png" alt="Kampagnebillede til IKEA Black Friday" />
+        </div>
+      </section>
+
+      <!-- 2. VIDEOER: Erstat hvert gråt felt med en YouTube-iframe.
+         Eksempel: <iframe src="https://www.youtube-nocookie.com/embed/VIDEO-ID" title="Kampagnevideo" allowfullscreen></iframe>
+         VIDEO-ID findes i linket til jeres YouTube-video. -->
+
+      <!-- KAMPAGNEVIDEOER -->
+
+      <!-- KAMPAGNEVIDEOER -->
+      <section class="afsnit indhold" id="videoer">
+        <h2>Kampagnevideoer</h2>
+
+        <div class="videoer">
+          <!-- Hovedvideo -->
+          <article>
+            <iframe src="https://www.youtube.com/embed/0ImNk0jqIzc" title="Hovedvideo" allowfullscreen> </iframe>
+
+            <h3>Hovedvideo</h3>
+            <p>YouTube · Format: 16:9 · 1 min.</p>
+          </article>
+
+          <!-- Kort kampagnevideo -->
+
+          <article>
+            <iframe src="https://www.youtube.com/embed/uUw4lC7Y7cw" title="Kort kampagnevideo" allowfullscreen> </iframe>
+
+            <h3>Kort kampagnevideo</h3>
+            <p>Meta Ads · Format: 9:16 · 15 sek.</p>
+          </article>
+
+          <!-- YouTube Bumper -->
+          <article>
+            <iframe src="https://www.youtube.com/embed/rmMS6S2TBqg" title="YouTube Bumper" allowfullscreen> </iframe>
+
+            <h3>Bumper</h3>
+            <p>YouTube · Format: 16:9 · 6 sek.</p>
+          </article>
+
+          <!-- Logoanimation -->
+          <article>
+            <iframe src="https://www.youtube.com/embed/jSGPSzcxiis" title="Logoanimation" allowfullscreen> </iframe>
+
+            <h3>Logoanimation</h3>
+            <p>Motion graphic · Logoanimation</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. PRODUKTBILLEDER: Alle 20 billeder ligger HER i HTML.
+         Du kan selv ændre navnene i src. Pile styres af funktioner.js. -->
+      <section class="afsnit graa" id="produkter">
+        <div class="indhold">
+          <h2>Produktfotografi</h2>
+          <div class="galleri">
+            <div class="galleri-billede">
+              <button class="pil venstre" id="forrige" type="button" aria-label="Forrige billede">‹</button>
+              <div class="billeder-i-galleri">
+                <div class="produktbillede">
+                  <img src="billeder/billede1_result.webp" alt="Produktfotografi 1" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 01</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede1efter_result.webp" alt="Produktfotografi 2" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 02</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede2_result.webp" alt="Produktfotografi 3" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 03</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede2efter_result.webp" alt="Produktfotografi 4" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 04</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede3_result.webp" alt="Produktfotografi 5" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 05</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede3efter_result.webp" alt="Produktfotografi 6" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 06</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede4_result.webp" alt="Produktfotografi 7" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 07</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede4efter_result.webp" alt="Produktfotografi 8" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 08</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede5_result.webp" alt="Produktfotografi 9" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 09</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede5efter_result.webp" alt="Produktfotografi 10" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 10</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede6_result.webp" alt="Produktfotografi 11" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 11</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede6efter_result.webp" alt="Produktfotografi 12" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 12</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede7_result.webp" alt="Produktfotografi 13" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 13</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede7efter_result.webp" alt="Produktfotografi 14" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 14</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede8_result.webp" alt="Produktfotografi 15" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 15</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede8efter_result.webp" alt="Produktfotografi 16" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 16</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede9_result.webp" alt="Produktfotografi 17" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 17</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede9efter_result.webp" alt="Produktfotografi 18" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 18</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede10_result.webp" alt="Produktfotografi 19" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 19</span>
+                </div>
+                <div class="produktbillede" hidden>
+                  <img src="billeder/billede10efter_result.webp" alt="Produktfotografi 20" loading="lazy" />
+                  <span class="mangler-billede">Indsæt produktbillede 20</span>
+                </div>
+              </div>
+              <button class="pil hoejre" id="naeste" type="button" aria-label="Næste billede">›</button>
+            </div>
+            <div class="galleri-tekst">
+              <span id="billedeTitel">Produktfotografi: Platform: E-commerce webshop · Format: 1:1</span>
+              <span id="billedeTal">1 / 20</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. ØVRIGE KAMPAGNEBILLEDER -->
+
+      <!-- 4. ØVRIGE KAMPAGNEBILLEDER -->
+      <section class="afsnit indhold" id="andre-billeder">
+        <h2>Øvrige kampagnebilleder</h2>
+
+        <div class="andre-billeder">
+          <!-- Lokationsfoto -->
+          <article>
+            <div class="billedplads">
+              <img src="billeder/lokation_result.webp" alt="Lokationsfoto" />
+              <span class="mangler-billede">Indsæt lokationsfoto</span>
+            </div>
+            <h3>Lokationsfoto</h3>
+            <p>Fotografi · Kampagnemateriale</p>
+          </article>
+
+          <!-- Baggrundsbillede -->
+          <article>
+            <div class="billedplads">
+              <img src="billeder/matrialebillede_result.webp" alt="Baggrundsbillede" />
+              <span class="mangler-billede">Indsæt baggrundsbillede</span>
+            </div>
+            <h3>Kampagnemateriale</h3>
+            <p>Fotografi · Kampagnemateriale</p>
+          </article>
+
+          <!-- Meta-galleri -->
+          <article>
+            <div class="meta-galleri">
+              <button class="meta-pil meta-venstre" id="metaForrige" type="button">‹</button>
+
+              <img class="meta-billede" src="billeder/mockup1_result.webp" alt="Meta opslag 1" />
+
+              <img class="meta-billede" src="billeder/mockup2_result.webp" alt="Meta opslag 2" hidden />
+
+              <button class="meta-pil meta-hoejre" id="metaNaeste" type="button">›</button>
+            </div>
+
+            <h3>Meta ad opslag</h3>
+            <p>Meta ad · Format: 1:1 · <span id="metaTal">1 / 2</span></p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 5. AI-DOKUMENTATION: Kun storyboards er lavet med AI -->
+      <section class="afsnit indhold" id="ai">
+        <h2>AI-dokumentation</h2>
+        <div class="ai-tekst">
+          <p><strong>Ai-værktøj:</strong> ChatGPT (OpenAI ImageGen - billedgenerering).</p>
+          <p><strong>Anvendelse:</strong> Vi har anvendt AI til at visualisere vores storyboards ud fra vores eget kampagnekoncept og manuskript.</p>
+          <p>
+            <strong>Promptbeskrivelse:</strong> Vi promptede AI til at generere sort-hvide, håndtegnede storyboardbilleder, der illustrerer handlingen i vores kampagnevideoer. Vi beskrev de enkelte scener, personernes handlinger, omgivelserne og
+            udviklingen i fortællingen, så billederne kunne bruges til planlægning af videooptagelserne.
+          </p>
+          <p><strong>Øvrigt materiale:</strong>Alle produktfotografier og kampagnefotos er taget af os selv.</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

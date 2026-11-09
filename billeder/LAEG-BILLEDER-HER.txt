@@ -1,0 +1,2 @@
+Læg dine billeder her. Du kan ændre filnavne i index.html.
+Eksempel: <img src="billeder/min-lampe.png" alt="Lampe">
