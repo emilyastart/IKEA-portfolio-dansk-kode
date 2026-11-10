@@ -1,72 +1,145 @@
-// TEMA 14 – Funktioner på hjemmesiden
-// Billeder, videoer og tekster ændres i index.html
+/* TEMA 14 – Funktioner på hjemmesiden
+   Billeder, videoer og tekster ændres i index.html
+*/
 
-// 1. SKOLEBESKED
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. SKOLEBESKED
 
-const skolebesked = document.getElementById("skolebesked");
+  const skolebesked = document.getElementById("skolebesked");
+  const lukBesked = document.getElementById("lukBesked");
 
-document.getElementById("lukBesked").addEventListener("click", () => {
-  skolebesked.hidden = true;
-});
+  if (skolebesked && lukBesked) {
+    lukBesked.addEventListener("click", () => {
+      skolebesked.hidden = true;
+    });
+  }
 
-// 2. PRODUKTGALLERI – 20 BILLEDER
+  // 2. PRODUKTGALLERI – 20 BILLEDER
 
-const billeder = document.querySelectorAll(".produktbillede");
-const billedeTal = document.getElementById("billedeTal");
+  const billeder = document.querySelectorAll(".produktbillede");
+  const billedeTal = document.getElementById("billedeTal");
+  const forrige = document.getElementById("forrige");
+  const naeste = document.getElementById("naeste");
 
-let aktivtBillede = 0;
+  if (billeder.length > 0) {
+    let aktivtBillede = 0;
 
-function visBillede(nummer) {
-  billeder[aktivtBillede].hidden = true;
+    function visBillede(nummer) {
+      aktivtBillede = (nummer + billeder.length) % billeder.length;
 
-  aktivtBillede = (nummer + billeder.length) % billeder.length;
+      billeder.forEach((billede, index) => {
+        billede.hidden = index !== aktivtBillede;
+      });
 
-  billeder[aktivtBillede].hidden = false;
+      if (billedeTal) {
+        billedeTal.textContent = `${aktivtBillede + 1} / ${billeder.length}`;
+      }
+    }
 
-  billedeTal.textContent = `${aktivtBillede + 1} / ${billeder.length}`;
-}
+    if (forrige) {
+      forrige.addEventListener("click", () => {
+        visBillede(aktivtBillede - 1);
+      });
+    }
 
-document.getElementById("forrige").addEventListener("click", () => {
-  visBillede(aktivtBillede - 1);
-});
+    if (naeste) {
+      naeste.addEventListener("click", () => {
+        visBillede(aktivtBillede + 1);
+      });
+    }
 
-document.getElementById("naeste").addEventListener("click", () => {
-  visBillede(aktivtBillede + 1);
-});
+    visBillede(0);
+  }
 
-// 3. META GALLERI – 2 BILLEDER
+  // 3. META GALLERI – 2 BILLEDER
 
-const metaBilleder = document.querySelectorAll(".meta-billede");
-const metaTal = document.getElementById("metaTal");
+  const metaBilleder = document.querySelectorAll(".meta-billede");
+  const metaTal = document.getElementById("metaTal");
+  const metaForrige = document.getElementById("metaForrige");
+  const metaNaeste = document.getElementById("metaNaeste");
 
-let aktivtMetaBillede = 0;
+  if (metaBilleder.length > 0) {
+    let aktivtMetaBillede = 0;
 
-function visMetaBillede(nummer) {
-  metaBilleder[aktivtMetaBillede].hidden = true;
+    function visMetaBillede(nummer) {
+      aktivtMetaBillede = (nummer + metaBilleder.length) % metaBilleder.length;
 
-  aktivtMetaBillede = (nummer + metaBilleder.length) % metaBilleder.length;
+      metaBilleder.forEach((billede, index) => {
+        billede.hidden = index !== aktivtMetaBillede;
+      });
 
-  metaBilleder[aktivtMetaBillede].hidden = false;
+      if (metaTal) {
+        metaTal.textContent = `${aktivtMetaBillede + 1} / ${metaBilleder.length}`;
+      }
+    }
 
-  metaTal.textContent = `${aktivtMetaBillede + 1} / ${metaBilleder.length}`;
-}
+    if (metaForrige) {
+      metaForrige.addEventListener("click", () => {
+        visMetaBillede(aktivtMetaBillede - 1);
+      });
+    }
 
-document.getElementById("metaForrige").addEventListener("click", () => {
-  visMetaBillede(aktivtMetaBillede - 1);
-});
+    if (metaNaeste) {
+      metaNaeste.addEventListener("click", () => {
+        visMetaBillede(aktivtMetaBillede + 1);
+      });
+    }
 
-document.getElementById("metaNaeste").addEventListener("click", () => {
-  visMetaBillede(aktivtMetaBillede + 1);
-});
+    visMetaBillede(0);
+  }
 
-// 4. HVIS ET BILLEDE MANGLER
+  // 4. KAMPAGNEMATERIALE – SLIDESHOW MED 5 BILLEDER
 
-document.querySelectorAll("img").forEach((billede) => {
-  billede.addEventListener("error", () => {
-    billede.parentElement.classList.add("billede-mangler");
+  document.querySelectorAll(".kampagne-slideshow").forEach((slideshow) => {
+    const slides = slideshow.querySelectorAll("img.slide");
+    const taeller = slideshow.querySelector(".slide-taeller");
+    const pilForrige = slideshow.querySelector(".slide-pil.forrige");
+    const pilNaeste = slideshow.querySelector(".slide-pil.naeste");
+
+    if (slides.length === 0) return;
+
+    let aktivSlide = 0;
+
+    function visSlide(nummer) {
+      aktivSlide = (nummer + slides.length) % slides.length;
+
+      slides.forEach((slide, index) => {
+        slide.classList.toggle("aktiv", index === aktivSlide);
+      });
+
+      if (taeller) {
+        taeller.textContent = `${aktivSlide + 1} / ${slides.length}`;
+      }
+    }
+
+    if (pilForrige) {
+      pilForrige.addEventListener("click", () => {
+        visSlide(aktivSlide - 1);
+      });
+    }
+
+    if (pilNaeste) {
+      pilNaeste.addEventListener("click", () => {
+        visSlide(aktivSlide + 1);
+      });
+    }
+
+    visSlide(0);
   });
 
-  if (billede.complete && billede.naturalWidth === 0) {
-    billede.parentElement.classList.add("billede-mangler");
-  }
+  // 5. HVIS ET BILLEDE MANGLER
+
+  document.querySelectorAll("img").forEach((billede) => {
+    function billedeMangler() {
+      // Skjul kun det billede, der ikke kan indlæses.
+      billede.style.visibility = "hidden";
+      console.warn("Billedet kunne ikke indlæses:", billede.src);
+    }
+
+    billede.addEventListener("error", billedeMangler);
+
+    if (billede.complete && billede.naturalWidth === 0) {
+      billedeMangler();
+    }
+  });
 });
